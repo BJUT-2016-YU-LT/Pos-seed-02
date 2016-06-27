@@ -10,22 +10,41 @@ public class Pos {
     public String getShoppingList(ShoppingChart shoppingChart) throws EmptyShoppingCartException {
 
         Report report = new ReportDataGenerator(shoppingChart).generate();
-
+        boolean needPromote=false;
         StringBuilder shoppingListBuilder = new StringBuilder()
-                .append("***å•†åº—è´­ç‰©æ¸…å•***\n");
+                .append("***ÉÌµê¹ºÎïÇåµ¥***\n");
 
         for (ItemGroup itemGroup : report.getItemGroupies()) {
+            if(!needPromote&&itemGroup.GroupIsPromotion()&&itemGroup.groupSize()>1)
+                needPromote=true;
             shoppingListBuilder.append(
+
                     new StringBuilder()
-                            .append("åç§°ï¼š").append(itemGroup.groupName()).append("ï¼Œ")
-                            .append("æ•°é‡ï¼š").append(itemGroup.groupSize()).append(itemGroup.groupUnit()).append("ï¼Œ")
-                            .append("å•ä»·ï¼š").append(String.format("%.2f", itemGroup.groupPrice())).append("(å…ƒ)").append("ï¼Œ")
-                            .append("å°è®¡ï¼š").append(String.format("%.2f", itemGroup.subTotal())).append("(å…ƒ)").append("\n")
+                            .append("Ãû³Æ£º").append(itemGroup.groupName()).append("£¬")
+                            .append("ÊıÁ¿£º").append(itemGroup.groupSize()).append(itemGroup.groupUnit()).append("£¬")
+                            .append("µ¥¼Û£º").append(String.format("%.2f", itemGroup.groupPrice())).append("(Ôª)").append("£¬")
+                            .append("Ğ¡¼Æ£º").append(String.format("%.2f", itemGroup.subTotal())).append("(Ôª)").append("\n")
                             .toString());
         }
+
+        if(needPromote){
+            shoppingListBuilder
+                    .append("----------------------\n")
+                    .append("»ÓÀáÔùËÍÉÌÆ·£º\n");
+            for (ItemGroup itemGroup : report.getItemGroupies()) {
+            if(itemGroup.GroupIsPromotion()){
+                shoppingListBuilder.append(
+                        new StringBuilder()
+                                .append("Ãû³Æ£º").append(itemGroup.groupName()).append("£¬")
+                                .append("ÊıÁ¿£º").append("1").append(itemGroup.groupUnit()).append("\n")
+                                .toString());
+            }
+
+            }}
+
         StringBuilder subStringBuilder = shoppingListBuilder
                 .append("----------------------\n")
-                .append("æ€»è®¡ï¼š").append(String.format("%.2f", report.getTotal())).append("(å…ƒ)").append("\n");
+                .append("×Ü¼Æ£º").append(String.format("%.2f", report.getTotal())).append("(Ôª)").append("\n");
 
         double saving = report.getSaving();
         if (saving == 0) {
@@ -34,7 +53,7 @@ public class Pos {
                     .toString();
         }
         return subStringBuilder
-                .append("èŠ‚çœï¼š").append(String.format("%.2f", saving)).append("(å…ƒ)").append("\n")
+                .append("½ÚÊ¡£º").append(String.format("%.2f", saving)).append("(Ôª)").append("\n")
                 .append("**********************\n")
                 .toString();
     }

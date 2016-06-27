@@ -1,3 +1,4 @@
+
 package com.thoughtworks.pos.common;
 
 /**
@@ -5,3 +6,4 @@ package com.thoughtworks.pos.common;
  */
 public class EmptyShoppingCartException extends Exception {
 }
+

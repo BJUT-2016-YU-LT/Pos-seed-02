@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 /**
- * Created by Administrator on 2015/1/2.
+ * Created by Administrator on 2016/6/22.
  */
 public class InputParser {
     private File indexFile;
@@ -35,7 +35,11 @@ public class InputParser {
         ShoppingChart shoppingChart = new ShoppingChart();
         for (String barcode : barCodes) {
             Item mappedItem = itemIndexes.get(barcode);
-            Item item = new Item(barcode, mappedItem.getName(), mappedItem.getUnit(), mappedItem.getPrice(), mappedItem.getDiscount());
+            Item item;
+            if(mappedItem.getIsPromotion())
+                item = new Item(barcode, mappedItem.getName(), mappedItem.getUnit(), mappedItem.getPrice(),true);
+            else
+             item = new Item(barcode, mappedItem.getName(), mappedItem.getUnit(), mappedItem.getPrice(), mappedItem.getDiscount());
             shoppingChart.add(item);
         }
         return shoppingChart;

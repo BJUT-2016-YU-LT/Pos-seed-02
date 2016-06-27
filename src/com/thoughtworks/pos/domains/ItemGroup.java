@@ -27,11 +27,13 @@ public class ItemGroup {
     public double groupPrice() {
         return items.get(0).getPrice();
     }
-
+    public boolean GroupIsPromotion(){return items.get(0).getIsPromotion();}
     public double subTotal() {
         double result = 0.00;
         for (Item item : items)
             result += item.getPrice() * item.getDiscount();
+        if(GroupIsPromotion()&&groupSize()>=2)
+            result-=groupPrice();
         return result;
     }
 

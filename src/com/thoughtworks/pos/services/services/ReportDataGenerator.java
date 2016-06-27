@@ -12,7 +12,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Administrator on 2014/12/31.
+ * Created by Administrator on 2016/6/22.
  */
 public class ReportDataGenerator {
     private ShoppingChart shoppingChart;

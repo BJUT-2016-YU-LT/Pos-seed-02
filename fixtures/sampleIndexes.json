@@ -1,8 +1,20 @@
 {
-  "ITEM000004": {
-    "name": 'ç”µæ± ',
-    "unit": 'ä¸ª',
-    "price": 2.00,
-    "discount": 0.8
-  }
+'ITEM000004':{
+"name": 'µç³Ø',
+"unit": '¸ö',
+"price": 2.00,
+"discount": 0.8
+}
+'ITEM000001':{
+"name": '¿É¿Ú¿ÉÀÖ',
+"unit": 'Æ¿',
+"price": 3.00,
+"discount": 0.8
+}
+'ITEM000002':{
+"name": 'Ñ©±Ì',
+"unit": 'Æ¿',
+"price": 2.00,
+"discount": 0.8
+}
 }
