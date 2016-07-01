@@ -1,0 +1,13 @@
+{
+  "USER0001": {
+    "userCode":"USER0001",
+    "name": "»Æ³¿",
+    "isVip": true,
+    "mark":300
+  },
+  "USER0002": {
+    "userCode":"USER0002",
+    "name": "ÇØÀ×",
+    "isVip": false
+  }
+}
