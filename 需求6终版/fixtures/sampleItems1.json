@@ -1,0 +1,34 @@
+{
+ "ITEM000001": {
+    "name": "ÄÌ²è",
+    "unit": "Æ¿",
+    "price": 5.0,
+    "discount": 0.8,
+    "vipDiscount": 0.6,
+    "promotion": true
+  },
+  "ITEM000002": {
+    "name": "¿É¿Ú¿ÉÀÖ",
+    "unit": "Æ¿",
+    "price": 3.00,
+    "vipDiscount": 0.6,
+    "promotion": true
+  },
+  "ITEM000003": {
+    "name": "Ñ©±Ì",
+    "unit": "Æ¿",
+    "price": 2.00,
+    "discount": 0.4,
+    "vipDiscount": 0.5,
+    "promotion": false
+  },
+  
+   "ITEM000004": {
+    "name": "µç³Ø",
+    "unit": "¸ö",
+    "price": 10.00,
+    "vipDiscount": 0.6,
+    "promotion": false
+  }
+  }
+  

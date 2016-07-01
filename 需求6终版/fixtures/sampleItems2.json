@@ -1,0 +1,10 @@
+{
+"ITEM000002":{
+"name": "µç³Ø",
+"unit": "¸ö",
+"price": 2.00,
+"discount": 0.6,
+"vipDiscount":0.8,
+"promotion": false
+}
+}
